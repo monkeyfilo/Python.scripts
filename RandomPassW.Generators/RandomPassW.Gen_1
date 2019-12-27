@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import string
+import random
+
+#No need to import rpgClass as its on the same file
+
+
+#THis is a class which ideally should be in a separate file
+class rpgClass:  
+
+
+  def random_password_generator(self,size): #self means this and refers to the instance of this class. 
+     chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+     return ''.join(random.choice(chars) for x in range(size))
+
+ 
+ 
+def main():
+   c3 = rpgClass()
+   c4 = c3.random_password_generator(20) #Change value depending on the password length required
+   print (c4)
+  
+if __name__ == "__main__": main()
