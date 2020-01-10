@@ -1,20 +1,24 @@
 #!/usr/bin/python38
 
-with open('/Users/IP.txt', 'r') as reader:
+#Parse a list of IP address into a format which can be consumed by Nessus (i.e. comma delimited)
+
+with open('/Users/monkeyfilo/Desktop/TRASH/Lynda/Python.Advanced/Exercise Files/Tester/IP.txt', 'r') as reader:
     # Note: readlines doesn't trim the line endings
     ip1 = reader.readlines()
     lines = [line.split() for line in ip1]
-    print(lines)
+    #print(lines)
+    ls =[]
 
-
-    with open('/Users/IP2.txt', 'w') as writer:
+    with open('/Users/monkeyfilo/Desktop/TRASH/Lynda/Python.Advanced/Exercise Files/Tester/IP2.txt', 'w') as writer:
             # Alternatively you could use
             # writer.writelines(reversed(dog_breeds))
             
             # Write the dog breeds to the file in reversed order
             for i in lines:
                for x in i:
-                  print(type(x))
+                  ls.append(i)
+                  print (x)
              #i = i.rstrip ('\n')
                   writer.write(x + ",")
-             #writer.write(i)
+                  
+            print (f"Number of IP address parsed to file: {len(ls)}")
